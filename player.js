@@ -3,6 +3,7 @@ let imagePlayerY = 360;
 let imagePlayerWidth = 60;
 let imagePlayerHeight = 60;
 let imagePlayerSpeed = 3;
+let collide = false;
 
 function showPlayer() {
   image(
@@ -21,5 +22,23 @@ function movePlayer() {
   }
   if (keyIsDown(DOWN_ARROW)) {
     imagePlayerY += imagePlayerSpeed;
+  }
+  collideCommand();
+}
+
+function collideCommand() {
+  for (let i = 0; i < imagePolice.length; i++) {
+    collide = collideRectCircle(
+      xPlayer[i],
+      yPlayer[i],
+      imagePoliceWidth,
+      imagePoliceHeight,
+      imagePlayerX,
+      imagePlayerY,
+      10
+      );
+      if (collide){
+        imagePlayerY = 360;
+      }
   }
 }

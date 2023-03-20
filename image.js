@@ -1,8 +1,5 @@
 let imageRoad;
 let imagePlayer;
-let imagePoliceOne;
-let imagePoliceTwo;
-let imagePoliceTree;
 
 function preload() {
   imageRoad = loadImage("assepts/road.png");
@@ -11,5 +8,8 @@ function preload() {
     loadImage("assepts/police.png"),
     loadImage("assepts/police.png"),
     loadImage("assepts/police.png"),
+    loadImage("assepts/police.png"),
+    loadImage("assepts/police.png"),
+    loadImage("assepts/police.png")
   ];
 }

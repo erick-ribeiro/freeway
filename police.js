@@ -1,6 +1,6 @@
-let yPlayer = [14, 72, 124];
-let xPlayer = [570, 540, 600];
-let speedPolice = [4, 2, 3];
+let yPlayer = [14, 72, 124, 185, 237, 294];
+let xPlayer = [570, 540, 600, 570, 540, 600];
+let speedPolice = [4, 2, 3, 2, 3, 4];
 
 let imagePoliceWidth = 90;
 let imagePoliceHeight = 90;
