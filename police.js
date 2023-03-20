@@ -1,20 +1,26 @@
-let imagePoliceX = 410;
-let imagePoliceY = 72;
+let yPlayer = [14, 72, 124];
+let xPlayer = [570, 540, 600];
+let speedPolice = [4, 2, 3];
+
 let imagePoliceWidth = 90;
 let imagePoliceHeight = 90;
-let imagePoliceSpeed = 2;
 
 function showPolice() {
-  image(
-    imagePolice,
-    imagePoliceX,
-    imagePoliceY,
-    imagePoliceWidth,
-    imagePoliceHeight
-  );
-  movePolice();
+  for (let i = 0; i < imagePolice.length; i++){
+    image(
+      imagePolice[i],
+      xPlayer[i],
+      yPlayer[i],
+      imagePoliceWidth,
+      imagePoliceHeight
+    );
+    movePolice(i);
+  }
 }
 
-function movePolice() {
-  imagePoliceX -= imagePoliceSpeed;
+function movePolice(i) {
+  if (xPlayer[i] < -80){
+    xPlayer[i] = 570
+  }
+  xPlayer[i] -= speedPolice[i];
 }
