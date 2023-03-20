@@ -1,16 +1,54 @@
 let imageRoad;
+
 let imagePlayer;
+let imagePlayerX = 100;
+let imagePlayerY = 360;
+let imagePlayerWidth = 60;
+let imagePlayerHeight = 60;
+let imagePlayerSpeed = 3
+
+let imagePolice;
+let imagePoliceX = 410;
+let imagePoliceY = 72;
+let imagePoliceWidth = 90;
+let imagePoliceHeight = 90;
+let imagePoliceSpeed = 2
 
 function preload(){
   imageRoad = loadImage("assepts/road.png");
-  imagePlayer = loadImage("assepts/player.png")
+  imagePlayer = loadImage("assepts/player.png");
+  imagePolice = loadImage("assepts/police.png")
 }
 
-function setup() {
+function setup(){
     createCanvas(500, 400);
   }
   
-  function draw() {
+  function draw(){
     background(imageRoad);
-    image(imagePlayer, 100, 366, 30, 30)
+    showPolice();
+    showPlayer();
+  }
+
+  function showPlayer(){
+    image(imagePlayer, imagePlayerX, imagePlayerY, imagePlayerWidth, imagePlayerHeight);
+    movePlayer();
+  }
+
+  function showPolice(){
+    image(imagePolice, imagePoliceX, imagePoliceY, imagePoliceWidth, imagePoliceHeight);
+    movePolice();
+  }
+
+  function movePolice(){
+    imagePoliceX -= imagePoliceSpeed
+  }
+
+  function movePlayer(){
+    if (keyIsDown(UP_ARROW)){
+      imagePlayerY -= imagePlayerSpeed
+    }
+    if (keyIsDown(DOWN_ARROW)){
+      imagePlayerY += imagePlayerSpeed
+    }
   }
