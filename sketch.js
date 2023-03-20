@@ -6,4 +6,6 @@ function draw() {
   background(imageRoad);
   showPolice();
   showPlayer();
+  showScore();
+  print(yPlayer)
 }

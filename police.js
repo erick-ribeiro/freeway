@@ -1,9 +1,9 @@
-let yPlayer = [14, 72, 124, 185, 237, 294];
+let yPlayer = [24, 82, 134, 195, 247, 304];
 let xPlayer = [570, 540, 600, 570, 540, 600];
 let speedPolice = [4, 2, 3, 2, 3, 4];
 
-let imagePoliceWidth = 90;
-let imagePoliceHeight = 90;
+let imagePoliceWidth = 70;
+let imagePoliceHeight = 70;
 
 function showPolice() {
   for (let i = 0; i < imagePolice.length; i++){

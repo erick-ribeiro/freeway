@@ -1,7 +1,7 @@
 let imagePlayerX = 100;
-let imagePlayerY = 360;
-let imagePlayerWidth = 60;
-let imagePlayerHeight = 60;
+let imagePlayerY = 367;
+let imagePlayerWidth = 30;
+let imagePlayerHeight = 30;
 let imagePlayerSpeed = 3;
 let collide = false;
 
@@ -18,10 +18,14 @@ function showPlayer() {
 
 function movePlayer() {
   if (keyIsDown(UP_ARROW)) {
-    imagePlayerY -= imagePlayerSpeed;
+    if (imagePlayerY > 0){
+      imagePlayerY -= imagePlayerSpeed;
+    }
   }
   if (keyIsDown(DOWN_ARROW)) {
-    imagePlayerY += imagePlayerSpeed;
+    if (imagePlayerY < 375){
+      imagePlayerY += imagePlayerSpeed;
+    }
   }
   collideCommand();
 }
@@ -35,10 +39,20 @@ function collideCommand() {
       imagePoliceHeight,
       imagePlayerX,
       imagePlayerY,
-      10
-      );
-      if (collide){
-        imagePlayerY = 360;
+      15
+    );
+    if (collide) {
+      imagePlayerY = 375;
+      if (score > 0){
+        score--;
       }
+    }
+  }
+}
+
+function win() {
+  if (imagePlayerY < 15) {
+    score++;
+    imagePlayerY = 375;
   }
 }
